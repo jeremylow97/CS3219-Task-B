@@ -19,7 +19,7 @@ describe("API calls", () => {
                      res.body.should.have.property('data').and.to.be.a('array');
                      done();
                   });
-        });
+        }).timeout(10000);
     });
 
     describe("POST API call to /api", () => {
@@ -37,7 +37,7 @@ describe("API calls", () => {
                      res.body.should.have.property('message').and.to.be.equal('New grocery item created!');
                      done();
                   });
-        });
+        }).timeout(10000);
     });
 
     describe("PUT API call to /api/:item_id", () => {
@@ -67,7 +67,7 @@ describe("API calls", () => {
                             done();
                          });
                  });
-       });
+       }).timeout(10000);
     });
 
     describe("DELETE API call to /api/:item_id", () => {
@@ -89,7 +89,7 @@ describe("API calls", () => {
                             done();
                          });
                  });
-       });
+       }).timeout(10000);
     });
 
 

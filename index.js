@@ -1,6 +1,11 @@
+
 let express = require('express');
 let bodyParser = require('body-parser');
 let mongoose = require('mongoose');
+const serverless = require('serverless-http');
+
+const dotenv = require('dotenv');
+dotenv.config();
 
 // Import routes
 let apiRoutes = require("./api-routes");
@@ -15,12 +20,13 @@ app.use(bodyParser.urlencoded({
  }));
 app.use(bodyParser.json());
 
+console.log("connecting to" );
 
-mongoose.connect('mongodb://localhost/grocerylist', { useNewUrlParser: true,  useUnifiedTopology: true});
+mongoose.connect(process.env.DB, { useNewUrlParser: true,  useUnifiedTopology: true});
 var db = mongoose.connection;
 
 
-app.get('/', (req, res) => res.status("200").send('Hello World with Express'));
+// app.get('/', (req, res) => res.status("200").send('Hello World with Express'));
 
 app.use('/api', apiRoutes);
 
@@ -35,3 +41,4 @@ app.use(function (err, req, res, next) {
 });
 
 module.exports = app;
+module.exports.handler = serverless(app);
