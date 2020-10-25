@@ -24,7 +24,7 @@ describe("API calls", () => {
 
     describe("POST API call to /api", () => {
         // Test to POST request which creates a new grocery item
-        it("should return status 200 and successful new grocery item crated response", (done) => {
+        it("should return status 200 and successful new grocery item created response", (done) => {
              chai.request(app)
                  .post('/api')
                  .send({
@@ -42,7 +42,7 @@ describe("API calls", () => {
 
     describe("PUT API call to /api/:item_id", () => {
         // Test to PUT request which updates grocery item Apple to Banana after a POST request
-        it("should return status 200 and successful new grocery item created response", (done) => {
+        it("should return status 200 and returns a response with the new updated grocery item details", (done) => {
             chai.request(app)
                 .post('/api')
                 .send({
@@ -72,7 +72,7 @@ describe("API calls", () => {
 
     describe("DELETE API call to /api/:item_id", () => {
         // Test to DELETE request which deletes grocery item Apple afer a POST request to create it 
-        it("should return status 200 and successful new grocery item created response", (done) => {
+        it("should return status 200 and successful new grocery item delete response", (done) => {
             chai.request(app)
                 .post('/api')
                 .send({
