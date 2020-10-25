@@ -11,7 +11,6 @@ exports.index = function (req, res) {
             });
         }
         res.json({
-            status: "success",
             message: "Here are the grocery items",
             data: groceryItems
         });
