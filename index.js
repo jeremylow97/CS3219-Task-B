@@ -26,7 +26,7 @@ mongoose.connect(process.env.DB, { useNewUrlParser: true,  useUnifiedTopology: t
 var db = mongoose.connection;
 
 
-// app.get('/', (req, res) => res.status("200").send('Hello World with Express'));
+app.get('/', (req, res) => res.status("200").send('Hello World with Express'));
 
 app.use('/api', apiRoutes);
 
