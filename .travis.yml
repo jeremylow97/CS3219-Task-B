@@ -7,3 +7,11 @@ cache:
 services: mongodb
 script:
   - npm test
+deploy:
+  provider: heroku
+  api_key:
+    secure: "psaassqqXm8BaeYfDQfsmcoUUaL0GbsvdxX56tqWhxAndBuM+lSKMl/BcJFoTKSUHMzl/27oXKQg3/AqoKYU5rC48IXdqo8z6kBXyrQ9V6Ph70t4LC1xgFnaT/+jewHieZdQXTImqpbJQvndum7uEFhnZ0RG62JUCmEjam0GKUWTD6GsirZki5ADIF+w5Efs1f7EJBYY5fqLVIGdL/5W8ZlYVpYnPpsZ42424s160f0XA3S9Ta4rbegtT9MT1iusfBrMtmLdXyjXrZYtqLCXwoKdQERzqPSa8FOCVjk+ZmlW1fkXihQ8Jg2X3ojFkweW144efUIIGzd/WwV3v9Uv3Rc2WlVZx5lPwgchGAUICVY6rOnZA9OoXS+j7aGOH1swlr6mz0zKW1shT+6W6ro9CARwb6JRFsAzsT/tgIUHQrsuR/0vMhDESoTvnqir+kujBg2fH8AZySvMQ2c83dx87Fh5bTLS90CusuRSBw6ZbYKjjH+5KOlQeHxJmAbvsy65CgxYm0XS7ZhTywI4ZHsY7AOIs98mDFW76RYJe+S44LGUZabcDUlBQIKO+vZqrjlkgsb631rp4d6gQqK/mm+cH+mJOJTbPzqt3qO7VFbMFLgNB6jAXrO2q/PFUBu79o1qUpryDakSRJuC+lkkc6ImQEU1BdWGOqtBcAiu4pPwMDc="
+  app: grocery-express-api
+  on:
+    repo: jeremylow97/CS3219-Task-B
+  
